@@ -1,7 +1,6 @@
 package puppet
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"strings"
@@ -49,7 +48,6 @@ func (r *router) addRoute(method string, pattern string, handler HandlerFunc) {
 
 func(r *router) getRoute(method string, path string) (*node,map[string]string) {
 	searchParts := parsePattern(path)
-	fmt.Println(searchParts,"11111111111111")
 	params := make(map[string]string)
 	root,ok := r.roots[method]
 	if !ok {
